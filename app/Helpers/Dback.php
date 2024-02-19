@@ -21,7 +21,7 @@ class Dback
     {
         // Config
         $this->env = config('app.env');
-        if($this->env == 'local'){
+        if ($this->env == 'local') {
             $this->mysqldump = 'E:/xampp-7/mysql/bin/mysqldump';
             $this->mysqlPath = 'E:/xampp-7/mysql/bin/mysql';
         } else {
@@ -33,9 +33,9 @@ class Dback
         $this->tables = [];
         $showTables = DB::select('SHOW TABLES');
         $tablesIn = 'Tables_in_' . env('DB_DATABASE');
-        
+
         foreach ($showTables as $table) {
-            if($this->prefix !== '' && strpos($table->$tablesIn, $this->prefix) === 0){
+            if ($this->prefix !== '' && strpos($table->$tablesIn, $this->prefix) === 0) {
                 $this->tables[] = $table->$tablesIn;
             }
         }
@@ -65,10 +65,10 @@ class Dback
 
         $filePath = storage_path('app/dback/' . $filename);
         $selectedTables = '';
-        if($this->prefix !== ''){
+        if ($this->prefix !== '') {
             $selectedTables = implode(' ', $this->tables);
-        } 
-        $command = $this->mysqldump . ' --user=' . env('DB_USERNAME') . ' --host=' . env('DB_HOST') . ' ' . env('DB_DATABASE') . ' ' . $selectedTables . ' > ' . $filePath;
+        }
+        $command = $this->mysqldump . ' --user=' . env('DB_USERNAME') . ' -p' . env('DB_PASSWORD') . ' --host=' . env('DB_HOST') . ' ' . env('DB_DATABASE') . ' ' . $selectedTables . ' > ' . $filePath;
         $returnVar = NULL;
         $output = NULL;
         exec($command, $output, $returnVar);
@@ -94,10 +94,10 @@ class Dback
             $lastKey = $total - 1;
             $latestSqlFile = $sql[$lastKey];
         } else {
-            $latestSqlFile = storage_path('app/dback/' . $latestSqlFile);
+            $latestSqlFile = storage_path('app/dback/' . $latestSqlFile . '.sql');
         }
 
-        $command = $this->mysqlPath . ' -u ' . env('DB_USERNAME') . ' ' . env('DB_DATABASE') . ' < ' . $latestSqlFile;
+        $command = $this->mysqlPath . ' -u ' . env('DB_USERNAME') . ' -p' . env('DB_PASSWORD') . ' ' . env('DB_DATABASE') . ' < ' . $latestSqlFile;
 
         $returnVar = NULL;
         $output = NULL;
@@ -137,5 +137,10 @@ class Dback
     }
 
 
-   
+
+    public function resetdb($filename)
+    {
+        $file = storage_path('app/dback/{$filename}.sql');
+        DB::unprepared($file);
+    }
 }

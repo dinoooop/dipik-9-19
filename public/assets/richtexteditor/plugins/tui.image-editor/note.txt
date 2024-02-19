@@ -17,3 +17,11 @@ if (Storage::exists('dback/2023-11-22-07-35-08.sql')) {
     // The file exists in the storage directory
     echo "File exists!";
 }
+
+
+my Laravel application is hosted in dir 
+/home/user/dipik-9-19
+and I moved all public files to dir 
+/home/user/public_html
+when I visit example.com it routs to /home/user/public_html
+But this not working
