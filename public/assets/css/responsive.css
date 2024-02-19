@@ -1,0 +1,106 @@
+@media (max-width: 1400px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {
+    /* Navigation --------------------*/
+    .header {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        top: -46px;
+        right: 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .responsive {
+        position: absolute;
+        width: 100%;
+        top: 1rem;
+    }
+
+    .topnav a {
+        display: block;
+        background-color: black;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--color-1);
+    }
+
+    .topnav {
+        display: none;
+    }
+
+    .responsive {
+        display: block;
+    }
+
+    
+    .sticky .menu {
+        top: -29px;
+
+    }
+    .sticky img {
+        width: 10%;
+    }
+
+    /* Navigation --------------------*/
+
+    .pocket {
+        width: 38vw;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .blog-side {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    .contact textarea {
+        width: 80vw;
+    }
+    .contact input, textarea {
+        width: 80vw;
+    }
+
+
+    .hero-text h2 {
+        font-size: 5rem;
+    }
+
+    p.subtitle {
+        padding: 2rem;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+
+    }
+
+    .card .thumb {
+        display: none;
+    }
+
+    .pocket {
+        width: 90vw;
+    }
+
+    
+}
