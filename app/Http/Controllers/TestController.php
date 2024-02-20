@@ -17,8 +17,7 @@ class TestController extends Controller
 {
     public function test(Request $request)
     {
-        $tables = DB::select('SHOW TABLES');
-        $tableNames = array_column(json_decode(json_encode($tables), true), 'Tables_in_' . env('DB_DATABASE'));
-        print_r($tableNames);
+        $d = new Dback();
+        dd($d);
     }
 }

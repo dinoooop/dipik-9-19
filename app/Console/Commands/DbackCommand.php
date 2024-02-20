@@ -5,14 +5,14 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Helpers\Dback;
 
-class DoBasic extends Command
+class DbackCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:basic {type?} {arg1?} {arg2?}';
+    protected $signature = 'command:dback {arg1} {arg2?}';
 
     /**
      * The console command description.
@@ -28,16 +28,9 @@ class DoBasic extends Command
      */
     public function handle()
     {
-        $type = $this->argument('type');
-
-        if ($type == 'dback') {
-
-            // backup DB
-            // method -> backup, restore, five, list
-            $method = $this->argument('arg1');
-            $arg2 = $this->argument('arg2');
-            $dbackObj = new Dback();
-            $dbackObj->$method($arg2);
-        }
+        $method = $this->argument('arg1');
+        $param = $this->argument('arg2');
+        $dbackObj = new Dback();
+        $dbackObj->$method($param);
     }
 }
