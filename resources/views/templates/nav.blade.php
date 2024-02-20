@@ -12,7 +12,9 @@
             <a href="{{ url('/#work') }}">Works</a>
             <a href="{{ url('/#experience') }}">Experience</a>
             <a href="{{ url('/#contact') }}">Contact</a>
+            @if(isBlog())
             <a href="{{ url('/blogs') }}">Blogs</a>
+            @endif
         </div>
     </nav>
 </div>

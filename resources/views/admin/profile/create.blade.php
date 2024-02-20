@@ -23,8 +23,10 @@
         <input name="experience" type="text" id="experience" />
     </div>
     <div class="form-group">
+        <label for="is_blog"><input name="is_blog" type="checkbox" id="is_blog" /> Enable Blog:</label>
+    </div>
+    <div class="form-group">
         <label for="status"><input name="status" type="checkbox" id="status" /> Activate this profile:</label>
-        
     </div>
     <button type="submit">Submit</button>
 </form>

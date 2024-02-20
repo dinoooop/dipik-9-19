@@ -18,7 +18,8 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $data = Profile::find($id);
-        $data->status = $data->status == 1 ? "checked": "";
+        $data->is_blog = $data->is_blog == 1 ? "checked" : "";
+        $data->status = $data->status == 1 ? "checked" : "";
         return view('admin.profile.edit', ['data' => $data]);
     }
 
@@ -35,22 +36,25 @@ class ProfileController extends Controller
             'work' => 'sometimes',
             'experience' => 'sometimes',
             'status' => 'sometimes',
+            'is_blog' => 'sometimes',
         ]);
 
-        if(isset($request->status) && $request->status == 1){
-            $validated['status'] = 1;
-        } else {
-            $validated['status'] = 0;
+        $validated['status'] = intval($request->status == 1);
+        $validated['is_blog'] = intval($request->is_blog == 1);
+
+        $profile = Profile::create($validated);
+
+        if ($validated['status']) {
+            Profile::where('id', '!=', $profile->id)->update(['status' => 0]);
         }
 
-        $data = Profile::create($validated);
         return redirect('/admin/profiles');
     }
 
     public function update(Request $request, $id)
     {
 
-        if($request->action == 'change_status') {
+        if ($request->action == 'change_status') {
             Profile::where('id', '!=', $id)->update(['status' => 0]);
             $data = Profile::where('id', $id)->update(['status' => 1]);
             return response()->json($data);
@@ -61,13 +65,15 @@ class ProfileController extends Controller
             'story' => 'sometimes',
             'work' => 'sometimes',
             'experience' => 'sometimes',
+            'is_blog' => 'sometimes',
             'status' => 'sometimes',
         ]);
 
-        if(isset($request->status) && $request->status == 1){
+        $validated['status'] = intval($request->status == 1);
+        $validated['is_blog'] = intval($request->is_blog == 1);
+
+        if ($validated['status']) {
             Profile::where('id', '!=', $id)->update(['status' => 0]);
-        } else {
-            $validated['status'] = 0;
         }
 
         $data = Profile::find($id)->update($validated);

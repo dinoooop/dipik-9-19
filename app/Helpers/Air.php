@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Profile;
 use App\Models\Upload;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tag;
@@ -100,4 +101,10 @@ function getBlogTagTitles($blog){
     }
 
     return implode(', ', $tags);
+}
+
+// to check whether blog enabled or not
+function isBlog(){
+    $profile = Profile::where('status', 1)->first();
+    return $profile->is_blog;
 }

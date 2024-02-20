@@ -19,6 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('story')->nullable();
             $table->string('work')->nullable();
             $table->string('experience')->nullable();
+            $table->boolean('is_blog')->default(true); // Enable disable blog
             $table->boolean('status');
             $table->timestamps();
         });

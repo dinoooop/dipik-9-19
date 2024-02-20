@@ -24,6 +24,9 @@
         <input name="experience" type="text" id="experience" value="{{ $data->experience }}" />
     </div>
     <div class="form-group">
+        <label for="is_blog"><input name="is_blog" type="checkbox" id="is_blog" value="1" {{ $data->is_blog }} /> Enable Blog:</label>
+    </div>
+    <div class="form-group">
         <label for="status"><input name="status" type="checkbox" id="status" value="1" {{ $data->status }} /> Activate this profile:</label>
         
     </div>
