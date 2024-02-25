@@ -25,6 +25,8 @@ use App\Http\Controllers\TagController;
 */
 
 Route::get('/', [GeneralController::class, 'home']);
+Route::get('/admin/create-code-html', [GeneralController::class, 'codeEditorCreate']);
+Route::post('/admin/show-code-html', [GeneralController::class, 'codeEditorShow']);
 Route::get('/test', [TestController::class, 'test']);
 Route::post('/contact', [GeneralController::class, 'contact']);
 

@@ -22,10 +22,15 @@
         <textarea name="content" id="content"></textarea> -->
 
         <label for="content">Content:</label>
-        <input name="content" id="inp_content" type="hidden" />
-        <div id="content_editor" class="richtexteditor" style="width: 100%; margin:0 auto;">
-        
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea name="content" id="content"></textarea>
         </div>
+        <!-- <label for="content">Content:</label>
+        <input name="content" id="inp_content" type="hidden" />
+        <div id="content_editor" class="richtexteditor" style="width: 100%; margin:0 auto;"> -->
+
+    </div>
     </div>
     <div class="form-group">
         <label for="excerpt">Excerpt:</label>
@@ -58,7 +63,7 @@
 
 <script>
     var editor1 = new RichTextEditor(document.getElementById("content_editor"));
-    
+
     editor1.attachEvent("change", function() {
         document.getElementById("inp_content").value = editor1.getHTMLCode();
     });

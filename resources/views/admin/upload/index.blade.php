@@ -29,7 +29,12 @@
             <td>
                 <img src="{{asset('storage/uploads/' . $model['url'])}}" alt="" width="150">
             </td>
-            <td>{{asset('storage/uploads/' . $model['url'])}}</td>
+            <td>
+                {{asset('storage/uploads/' . $model['url'])}} 
+                <br />
+                <textarea><?php echo htmlentities('<img src="' . asset('storage/uploads/' . $model['url']) . '" class="blog-image" />'); ?></textarea>
+
+            </td>
             <td>
                 <a href="/admin/uploads/{{$model['id']}}/edit" class="btn"><i class="fas fa-edit"></i></a>
                 <button data-model-end-point="uploads" data-model-id="{{ $model->id }}" class="btn trash"><i class="fas fa-trash"></i></button>

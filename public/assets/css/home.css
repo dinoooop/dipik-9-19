@@ -12,8 +12,8 @@
     --color-1: rgb(0, 224, 249);
     --color-2: rgb(148, 244, 255);
     --bg-color: #152125;
-    --bg-color-2 : #052b38;
-    --bg-color-3 : #083847;
+    --bg-color-2: #052b38;
+    --bg-color-3: #083847;
     --white: #ffffff;
     --black: #101b1e;
     --danger: #bb0000;
@@ -30,6 +30,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -38,29 +39,20 @@ body {
     color: aliceblue;
     /* font-family: big_noodle; */
     font-family: droid_sans;
-    letter-spacing: 0.1rem;
+    letter-spacing:0cqmax;
 }
 
-a { 
+a {
     color: var(--color-1);
 }
 
+
 h1 {
-    font-size: 4.5rem;
     margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: 4rem;
     text-transform: uppercase;
-}
-
-h3 {
-    font-size: 3rem;
-}
-
-h4 {
-    font-size: 2rem;
 }
 
 h4 a {
@@ -68,23 +60,16 @@ h4 a {
 }
 
 p {
-    font-size: 1.5rem;
-    line-height: 3rem;
     font-weight: normal;
     margin-bottom: 1rem;
 }
 
 p.subtitle {
-    padding: 5rem;
+    margin: 5rem;
 }
 
-p.excerpt {
-    font-size: 1rem;
-    line-height: 2rem;
-}
-
-p.small {
-    font-size: 0.9rem;
+p.story {
+    margin: 5rem 0;
 }
 
 .wrapper {
@@ -98,24 +83,17 @@ p.small {
     background-size: cover;
 }
 
-.hero-text {
+.hero {
     padding: 12rem 0;
     text-align: center;
     text-transform: uppercase;
 }
 
-.hero-text h2 {
-    font-size: 6rem;
-}
-
-.hero-text h2 span {
+.hero h2 span {
     color: var(--color-1);
 }
 
-.hero-text p {
-    font-size: 3rem;
-    line-height: 50px;
-}
+
 
 .story {
     background-color: var(--color-1);
@@ -147,6 +125,9 @@ p.small {
     font-weight: bold;
 }
 
+.blog-image {
+    width: 100%;
+}
 /* RIPPLE ---------------------------------*/
 .ripple {
     /*background: #79b928;
@@ -265,7 +246,6 @@ button:hover {
     margin: 0.5rem;
     text-align: center;
     color: black;
-    font-weight: bold;
     border: 0.1rem solid black;
     gap: 2rem;
     padding: 2rem;
@@ -285,6 +265,7 @@ button:hover {
 .address {
     margin: 0.5rem 0;
     font-weight: bolder;
+    letter-spacing: 0.1rem;
 }
 
 footer {
@@ -338,9 +319,10 @@ nav a:hover {
 .pockets {
     display: flex;
     align-items: start;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    
+    gap: 2rem;
+
 }
 
 .pocket {
@@ -352,11 +334,11 @@ nav a:hover {
     min-height: 89vh;
 }
 
-.pocket .thumb img{   
-    width: 100%; 
+.pocket .thumb img {
+    width: 100%;
 }
 
-.pocket .details{
+.pocket .details {
     padding: 1rem;
 }
 
@@ -369,18 +351,10 @@ nav a:hover {
     align-items: start;
     justify-content: space-between;
     gap: 3rem;
-    
+
 }
 
-.blog-main {
-    flex: 2;
-}
-
-.blog-side {
-    flex: 1;
-}
-
-p.date-time { 
+p.date-time {
     margin: 0;
     font-size: 0.8rem;
     color: var(--color-1);
@@ -391,7 +365,7 @@ p.date-time {
     margin: 3rem 0;
 }
 
-.blog-content p {   
+.blog-content p {
     font-size: 1.5rem;
     line-height: 3rem;
     font-weight: normal;
@@ -411,7 +385,7 @@ p.date-time {
     margin-bottom: 1rem;
 }
 
-.blog-side p {   
+.blog-side p {
     font-size: 1rem;
     line-height: 2rem;
     font-weight: normal;
@@ -450,7 +424,7 @@ a.button-txt-bg {
     font-size: 1.5rem;
     line-height: 2rem;
     padding: 1rem;
-    font-weight:400;
+    font-weight: 400;
     color: var(--bg-color);
     letter-spacing: 0.001rem;
 }
@@ -462,4 +436,68 @@ a.button-txt-bg {
 
 .side-post img {
     width: 100%;
+}
+
+/* -------------------- Scroll ---------------* /
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ------------------------ Code Editor -------------- */
+.vs-code-editor {
+    font-family: 'Courier New', monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    border: 1px solid var(--color-1);
+    overflow-x: auto;
+}
+
+pre {
+    margin: 0;
+}
+
+code {
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+    
+}
+
+.language-javascript {
+    color: #d4d4d4;
+}
+
+.language-javascript .blue {
+    color: #61afef;
+}
+
+.language-javascript .orange {
+    color: #e6a970;
+}
+
+.language-javascript .rose {
+    color: #ff00ee;
+}
+
+.language-javascript .green {
+    color: #00ff04;
 }

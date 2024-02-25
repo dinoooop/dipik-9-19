@@ -9,6 +9,7 @@ use App\Models\Profile;
 use App\Models\Story;
 use App\Models\User;
 use App\Models\Work;
+use App\Helpers\CodeHtml;
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -101,5 +102,27 @@ class GeneralController extends Controller
             // Handle exceptions, log errors, etc.
             return redirect()->back()->with('error', 'Something went wrong. Please try again later.');
         }
+    }
+
+    function codeEditorCreate()
+    {
+        return view('admin.code_editor.create');
+    }
+
+    function codeEditorShow(Request $request)
+    {
+        $codeType = $request->code_type;
+        $codeHtml = '';
+        if($codeType == 'js'){
+            $code = new CodeHtml();
+            $codeHtml =  $code->generate($request->content);
+        }
+
+        if($codeType == 'paragraph'){
+            $code = new CodeHtml();
+            $codeHtml =  $code->generatePara($request->content);
+        }
+        return view('admin.code_editor.show', compact('codeHtml'));
+        
     }
 }

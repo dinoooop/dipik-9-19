@@ -11,6 +11,11 @@
     <div class="container">
         <aside class="sidenav">
             <ul>
+                <li><a href="/" target="_blank">
+                        <i class="fa-solid fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
                 <li><a href="/admin/profiles">
                         <i class="fa-solid fa-id-badge"></i>
                         <span>Profiles</span>
@@ -19,6 +24,11 @@
                 <li><a href="/admin/blogs">
                         <i class="fa-solid fa-blog"></i>
                         <span>Blogs</span>
+                    </a>
+                </li>
+                <li><a href="/admin/create-code-html">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Code Editor</span>
                     </a>
                 </li>
                 <li><a href="/admin/stories">

@@ -5,6 +5,8 @@
     @include('templates.header')
     <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/columns.css') }}" rel="stylesheet">
+    @yield('head')
 </head>
 
 <body>

@@ -7,10 +7,9 @@
 
     @include('templates.nav')
 
-
-    <div class="hero-text wrapper">
-        <h2>Hi, I am <span>Dinoop</span></h2>
-        <p>Welcome to my portfolio</p>
+    <div class="hero wrapper">
+        <h2 class="hero-text">Hi, I am <span>Dinoop</span></h2>
+        <p class="hero-text">Welcome to my portfolio</p>
     </div>
 </section>
 
@@ -18,9 +17,9 @@
     <div class="wrapper" id="story">
         @if(isset($story->title))
         <h2>{{ $story->title }}</h2>
-        <p><?php echo $story->content; ?></p>
+        <p class="story"><?php echo $story->content; ?></p>
         @endif
-        
+
     </div>
 </section>
 <section class="work bgtext artboard" id="work">
