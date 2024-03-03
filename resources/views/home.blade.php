@@ -75,10 +75,10 @@
 
                 <div for="message">
                     <strong>Message</strong>
-                    <textarea name="message" required></textarea>
+                    <textarea name="message" id="message" required></textarea>
                 </div>
-
-                <button type="submit" class="">Submit</button>
+                <div class="contact-message"></div>
+                <button type="submit" class="contact-submit">Submit</button>
             </div>
         </form>
     </div>

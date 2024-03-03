@@ -16,7 +16,9 @@
     --bg-color-3: #083847;
     --white: #ffffff;
     --black: #101b1e;
-    --danger: #bb0000;
+    --danger: #fc6084;
+    --success: #08f797;
+    
 }
 
 * {
@@ -70,6 +72,18 @@ p.subtitle {
 
 p.story {
     margin: 5rem 0;
+}
+
+.danger {
+    color: var(--danger);
+}
+
+.success {
+    color: var(--success);
+}
+
+.info {
+    color: var(--white);
 }
 
 .wrapper {

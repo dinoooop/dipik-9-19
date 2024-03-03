@@ -44,6 +44,55 @@ $(document).ready(function () {
 
     });
 
+
+    function setEmpty(){
+        $('#name').val('');
+        $('#email').val('');
+        $('#message').val('');
+    }
+    $('.contact-submit').click(function (e) {
+        e.preventDefault();
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var $contactMessage = $('.contact-message');
+
+        // Simple email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            $contactMessage.html('<div class="danger">Please enter a valid email address.</div>');
+            return;
+        }
+
+        // Check if message is not empty
+        if (message.trim() === '') {
+            $contactMessage.html('<div class="danger">Please enter a message.</div>');
+            return;
+        }
+        $contactMessage.html('<div class="info">Sending...</div>');
+
+        $.ajax({
+            url: '/contact/',
+            type: 'POST',
+            headers: {
+                'X-CSRF-Token': csrfToken
+            },
+            data: {
+                name, email, message
+            },
+            success: function (response) {
+                console.log(response)
+                $contactMessage.html('<div class="success">Thank you for reaching out!</div>');
+                setEmpty()
+            },
+            error: function (xhr, status, error) {
+                console.log(error)
+                $contactMessage.html('<div class="danger">Failed to send email.</div>');
+            }
+        });
+    });
+
 });
 
 
