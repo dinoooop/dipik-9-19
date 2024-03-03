@@ -73,7 +73,7 @@ $(document).ready(function () {
         $contactMessage.html('<div class="info">Sending...</div>');
 
         $.ajax({
-            url: '/contact/',
+            url: '/contact',
             type: 'POST',
             headers: {
                 'X-CSRF-Token': csrfToken
