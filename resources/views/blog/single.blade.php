@@ -15,7 +15,7 @@
 
         <div class="blog-main">
             <h1>{{ $data['title'] }}</h1>
-            <p class="date-time">{{ blogDateFormat($data['updated_at']) }}</p>
+            <p class="date-time">{{ blogDateFormat($data['created_at']) }}</p>
             <div class="blog-content"><?php echo $data->content ?></div>
         </div>
 

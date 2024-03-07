@@ -49,6 +49,10 @@
         <input name="related" type="number" id="related" />
     </div>
     <div class="form-group">
+        <label for="created_at">Created At:</label>
+        <input name="created_at" type="text" id="created_at" />
+    </div>
+    <div class="form-group">
         <label for="status">Status:</label>
         <span><input name="status" type="radio" value="2" id="draft" checked /> <label for="draft">Draft</label></span>
         <span><input name="status" type="radio" value="1" id="publish" /> <label for="publish">Publish</label></span>

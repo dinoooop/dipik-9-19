@@ -49,6 +49,10 @@
         <input name="related" type="number" value="{{ $data->related }}" id="related" />
     </div>
     <div class="form-group">
+        <label for="created_at">Created At:</label>
+        <input name="created_at" type="text" value="{{ $data->created_at }}" id="created_at" />
+    </div>
+    <div class="form-group">
         <label for="status">Status:</label>
         <span><input name="status" type="radio" value="2" id="draft" {{ $data->status == 2 ? "checked" : "" }} /> <label for="draft">Draft</label></span>
         <span><input name="status" type="radio" value="1" id="publish" {{ $data->status == 1 ? "checked" : "" }} /> <label for="publish">Publish</label></span>
