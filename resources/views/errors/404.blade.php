@@ -1,0 +1,14 @@
+@extends('layouts.front')
+@section('title', 'Not Found')
+
+
+@section('content')
+<div class="container-blank">
+    <div class="cardbody">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>Sorry, the page you are looking for could not be found.</p>
+        <p>Go to <a href="{{ url('/') }}">Home</a></p>
+    </div>
+</div>
+@endsection

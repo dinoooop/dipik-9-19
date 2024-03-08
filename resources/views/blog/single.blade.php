@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title', 'User Login')
+@section('title', $data['title'])
 
 @section('head')
 <link href="{{ asset('assets/css/code-editor.css') }}" rel="stylesheet">

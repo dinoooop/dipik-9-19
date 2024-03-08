@@ -27,7 +27,7 @@ class BlogController extends Controller
 
     public function single(Request $request)
     {
-        $data = Blog::where('slug', $request->slug)->first();
+        $data = Blog::where('slug', $request->slug)->firstOrFail();
         $tags = Tag::all();
         $featured = Blog::where('is_featured', 1)->where('slug', '!=', $request->slug)->first();
         $related = Blog::where('id', $data->related)->first();

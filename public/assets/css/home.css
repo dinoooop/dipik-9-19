@@ -316,6 +316,21 @@ nav a:hover {
     display: none;
 }
 
+
+.container-blank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.cardbody {
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 30%;
+}
+
 .sticky {
     position: fixed;
     top: 0;

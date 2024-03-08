@@ -1,6 +1,5 @@
 @extends('layouts.front')
-@section('title', 'User Login')
-
+@section('title', 'Home')
 
 @section('content')
 <section class="home" id="home">
