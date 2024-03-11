@@ -19,6 +19,7 @@ class ProfileController extends Controller
     {
         $data = Profile::find($id);
         $data->is_blog = $data->is_blog == 1 ? "checked" : "";
+        $data->is_social = $data->is_social == 1 ? "checked" : "";
         $data->status = $data->status == 1 ? "checked" : "";
         return view('admin.profile.edit', ['data' => $data]);
     }
@@ -37,10 +38,12 @@ class ProfileController extends Controller
             'experience' => 'sometimes',
             'status' => 'sometimes',
             'is_blog' => 'sometimes',
+            'is_social' => 'sometimes',
         ]);
 
         $validated['status'] = intval($request->status == 1);
         $validated['is_blog'] = intval($request->is_blog == 1);
+        $validated['is_social'] = intval($request->is_social == 1);
 
         $profile = Profile::create($validated);
 
@@ -66,11 +69,13 @@ class ProfileController extends Controller
             'work' => 'sometimes',
             'experience' => 'sometimes',
             'is_blog' => 'sometimes',
+            'is_social' => 'sometimes',
             'status' => 'sometimes',
         ]);
 
         $validated['status'] = intval($request->status == 1);
         $validated['is_blog'] = intval($request->is_blog == 1);
+        $validated['is_social'] = intval($request->is_social == 1);
 
         if ($validated['status']) {
             Profile::where('id', '!=', $id)->update(['status' => 0]);

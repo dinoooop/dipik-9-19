@@ -57,8 +57,7 @@
 <section class="contact artboard" id="contact">
     <div class="wrapper">
         <h2>Contact</h2>
-        <p class="subtitle">Lets do something together</p>
-        <!-- https://formspree.io/f/moqbgwzj -->
+        <p class="subtitle">Let's do something together</p>         
         <form action="/contact" method="post">
             @csrf
             <div class="form-element">
@@ -80,6 +79,8 @@
                 <button type="submit" class="contact-submit">Submit</button>
             </div>
         </form>
+
+        
     </div>
 </section>
 

@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    @include('templates.header')
+    @include('templates.head')
     <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/admin-responsive.css') }}" rel="stylesheet">
-    
+    @yield('head')
 </head>
 
 <body>

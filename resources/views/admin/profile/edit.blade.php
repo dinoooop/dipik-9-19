@@ -27,6 +27,9 @@
         <label for="is_blog"><input name="is_blog" type="checkbox" id="is_blog" value="1" {{ $data->is_blog }} /> Enable Blog:</label>
     </div>
     <div class="form-group">
+        <label for="is_social"><input name="is_social" type="checkbox" id="is_social" value="1" {{ $data->is_social }} /> Enable Social:</label>
+    </div>
+    <div class="form-group">
         <label for="status"><input name="status" type="checkbox" id="status" value="1" {{ $data->status }} /> Activate this profile:</label>
         
     </div>

@@ -108,3 +108,9 @@ function isBlog(){
     $profile = Profile::where('status', 1)->first();
     return $profile->is_blog;
 }
+
+// to check whether social icon needs to show
+function isSocial(){
+    $profile = Profile::where('status', 1)->first();
+    return $profile->is_social;
+}

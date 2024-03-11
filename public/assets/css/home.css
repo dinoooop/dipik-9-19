@@ -229,6 +229,23 @@ button:hover {
     background-color: var(--color-2);
 }
 
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.socials .social a {
+    transition: all ease-in 0.3s;
+}
+
+.socials .social a:hover {
+    color: var(--white);
+}
+
 .bgtext {
     position: relative;
 }

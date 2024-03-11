@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    @include('templates.header')
+    @include('templates.head')
     <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
-    @yield('header')
+    @yield('head')
 </head>
 
 <body>

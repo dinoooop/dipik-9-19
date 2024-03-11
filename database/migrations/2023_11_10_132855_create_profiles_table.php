@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration
             $table->string('work')->nullable();
             $table->string('experience')->nullable();
             $table->boolean('is_blog')->default(true); // Enable disable blog
+            $table->boolean('is_social')->default(true); // Enable disable social media icons
             $table->boolean('status');
             $table->timestamps();
         });

@@ -19,6 +19,7 @@ class Profile extends Model
         'work',
         'experience',
         'is_blog',
+        'is_social',
         'status',
     ];
 
