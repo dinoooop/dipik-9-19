@@ -23,7 +23,7 @@ class Tag extends Model
 
     public function blogs(): BelongsToMany
     {
-        return $this->belongsToMany(Blog::class);
+        return $this->belongsToMany(Blog::class)->where('status', 1);
     }
     
 }
