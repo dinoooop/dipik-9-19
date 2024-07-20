@@ -41,7 +41,7 @@
         <div class="cards">
             @foreach($experiences as $key => $experience)
             <div class="card">
-                <div class="thumb">{{ $experience->duration }}</div>
+                <!-- <div class="thumb">{{ $experience->duration }}</div> -->
                 <div class="details">
                     <h3>{{ $experience->title }}</h3>
                     <p class="address">{{ $experience->address }}</p>
