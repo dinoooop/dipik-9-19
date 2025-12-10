@@ -53,7 +53,10 @@ function gcuid()
 function getImageById($id)
 {
     $image = Upload::find($id);
-    return url('storage/uploads/' . $image->url);
+    if ($image) {
+        return url('storage/uploads/' . $image->url);
+    }
+    return '';
 }
 
 /**

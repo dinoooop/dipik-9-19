@@ -29,13 +29,22 @@ class GeneralController extends Controller
         $works = $experiences = [];
         if (!empty($profile->work)) {
             $workIds = expForWhereIn($profile->work);
+            $strRowById = '';
+            foreach ($workIds as $id) {
+                $strRowById .= "WHEN {$id} THEN " . array_search($id, $workIds) . " ";
+            }
             $works = Work::whereIn('id', $workIds)
-                ->orderByRaw("FIELD(id, {$profile->work})")->get();
+                ->orderByRaw("CASE id {$strRowById} END")->get();
         }
         if (!empty($profile->experience)) {
             $experienceIds = expForWhereIn($profile->experience);
+            $strRowById = '';
+            foreach ($experienceIds as $id) {
+                $strRowById .= "WHEN {$id} THEN " . array_search($id, $experienceIds) . " ";
+            }
+            
             $experiences = Experience::whereIn('id', $experienceIds)
-                ->orderByRaw("FIELD(id, {$profile->experience})")->get();
+                ->orderByRaw("CASE id {$strRowById} END")->get();
         }
 
         return view('home', [
