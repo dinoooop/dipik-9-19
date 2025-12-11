@@ -8,7 +8,7 @@
 
     <div class="hero wrapper">
         <h2 class="hero-text">Hi, I am <span>Dinoop</span></h2>
-        <p class="hero-text">Welcome to my portfolio</p>
+        <p class="hero-text">Welcome to my portfolio!</p>
     </div>
 </section>
 
